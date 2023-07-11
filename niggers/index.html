@@ -14,10 +14,48 @@
         color:white;
         font-family: 'Georgia', 'Georgia', 'Georgia', 'fantasy';
     }
+    .seizure{
+        position: absolute;
+    }
 </style>
 <body style="background-color: red;background-image:url('https://media.tenor.com/MNDbvoBu9gkAAAAd/luigi-luigismansion.gif');background-repeat:repeat;">
-    <h1>DIDN'T YOU ALREADY FUCKING KNOW</h1>
-    <p>HOW MUCH I HATE NIGGERS?!?!?!</p>
-    <p>NIGGERS suck <em><strong>ARSE</strong>, and EVERYONE EVERYONE KNOWS</em> that. THAT'S BECAUSE THEY ARE GAY AS FUCK.</p>
+    <h1 class="seizure">DIDN'T YOU ALREADY FUCKING KNOW</h1>
+    <p class="seizure">HOW MUCH I HATE NIGGERS?!?!?!</p>
+    <p class="seizure">NIGGERS suck <em><strong>ARSE</strong>, and EVERYONE EVERYONE KNOWS</em> that. THAT'S BECAUSE THEY ARE GAY AS FUCK.</p>
+    <img class="seizure" src="https://static.wikia.nocookie.net/ssb/images/7/72/MPSS_Luigi.png">
+    <img class="seizure" src="https://static.wikia.nocookie.net/ssb/images/7/72/MPSS_Luigi.png">
+    <img class="seizure" src="https://static.wikia.nocookie.net/ssb/images/7/72/MPSS_Luigi.png">
+    <img class="seizure" src="https://static.wikia.nocookie.net/ssb/images/7/72/MPSS_Luigi.png">
+    <script>function getRandomPosition() {
+        var screenWidth = window.innerWidth;
+        var screenHeight = window.innerHeight;
+
+        var randomX = Math.floor(Math.random() * screenWidth);
+        var randomY = Math.floor(Math.random() * screenHeight);
+
+        return [randomX, randomY];
+    }
+
+    function moveSeizures() {
+        var seizureElements = document.getElementsByClassName("seizure");
+
+        for (var i = 0; i < seizureElements.length; i++) {
+            var seizureElement = seizureElements[i];
+            var randomPosition = getRandomPosition();
+
+            seizureElement.style.left = randomPosition[0] + "px";
+            seizureElement.style.top = randomPosition[1] + "px";
+        }
+    }
+
+    function animate() {
+        moveSeizures();
+        requestAnimationFrame(animate);
+    }
+
+    // Execute the script after the HTML content is loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        animate();
+    });</script>
 </body>
 </html>
