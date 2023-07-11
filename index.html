@@ -22,13 +22,18 @@
         setInterval(function(){
             var button = document.createElement("button");
             document.body.append(button);
-            var randomNumber = Math.random() * 2 | 0;
-            button.innerHTML = ["Click me to reset the page", "Click me to remove everything"][randomNumber];
-            button.onclick = [function(){
+            var randomNumber = Math.random() * 3 | 0;
+            if(randomNumber == 2 && Math.random() < 1/(100/3)){
+                setTimeout(function(){
+                    location.href = "https://po.ta.to";
+                }, 5000);
+            };
+            button.innerHTML = ["Click me to reset the page", "Click me to remove everything", "This button has a 1 in 100/3 chance of redirecting you to https://po.ta.to in 5 seconds..."][randomNumber];
+            button.onclick = ([function(){
                 location.reload();
             }, function(){
                 document.write(" ");
-            }][randomNumber]
+            }][randomNumber] || "");
             button.style = "color: #FFFFFF; background-color: #000000" + (randomNumber ? "; animation: niggers 4s infinite" : "");
         }, 1000);
     </script>
